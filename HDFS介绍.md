@@ -92,7 +92,7 @@
 
 ## HDFS如何读取数据
 
-![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/HDFS_read.jpg)
+![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/HDFS_read.png)
 
 HDFS的文件读取原理，主要包括以下几个步骤：
 
@@ -105,7 +105,7 @@ HDFS的文件读取原理，主要包括以下几个步骤：
 
 ## HDFS如何写入文件
 
-![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/HDFS_write.jpg)
+![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/HDFS_write.png)
 
 HDFS的文件写入原理，主要包括以下几个步骤：
 
@@ -134,7 +134,7 @@ HDFS的文件写入原理，主要包括以下几个步骤：
 
 ​    架构如下图
 
-![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/NameNode_federation.jpg)
+![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/NameNode_federation.png)
 
 - 存在多个NameNode，每个NameNode分管一部分目录
 - NameNode共用DataNode
@@ -157,7 +157,7 @@ HDFS的文件写入原理，主要包括以下几个步骤：
 
 ​     　　架构如下图
 
-![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/NameNode_HA.jpg)
+![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/NameNode_HA.png)
 
 Active NN、Standby NN有主备之分，NN Active是主的，NN Standby备用的
 
@@ -173,7 +173,7 @@ Active NN、Standby NN有主备之分，NN Active是主的，NN Standby备用的
 
 **3、结合HDFS2的新特性，在实际生成环境中部署图**
 
-![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/newHDFS_structure.jpg)
+![images](https://github.com/WatermelonAI/Spark-/blob/master/images/hadoop2/HDFS/newHDFS_structure.png)
 
 ​	这里有12个DN,有4个NN，NN-1与NN-2是主备关系，它们管理/share目录；NN-3与NN-4是主备关系，它们管理/user目录。
 
