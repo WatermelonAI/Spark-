@@ -41,7 +41,7 @@
 
   ​
 
-当然HDFS也会有一些缺点：
+  当然HDFS也会有一些缺点：
 
 **1、低延时数据访问**
 
@@ -178,4 +178,67 @@ Active NN、Standby NN有主备之分，NN Active是主的，NN Standby备用的
 ​	这里有12个DN,有4个NN，NN-1与NN-2是主备关系，它们管理/share目录；NN-3与NN-4是主备关系，它们管理/user目录。
 
 
+
+## HDFS基本shell操作
+
+在客户端输入Hadoop fs，可以查看所有的hadoop shell
+
+-help [cmd] //显示命令的帮助信息，如： hadoop fs -help ls
+
+-ls(r) <path>      //显示当前目录下所有文件，path是hadoop下的路径，如：/shikun/file
+
+-du(s) <path>    //显示目录中所有文件大小
+
+-count[-q] <path>     //显示目录中文件数量
+
+-mv <src> <dst> //移动多个文件到目标目录
+
+-cp <src> <dst>  //复制多个文件到目标目录
+
+-rm(r)         //删除文件(夹)
+
+-put <localsrc> <dst>       //本地文件复制到hdfs
+
+-copyFromLocal //同put
+
+-moveFromLocal       //从本地文件移动到hdfs
+
+-get [-ignoreCrc] <src> <localdst>  //复制文件到本地，可以忽略crc校验
+
+-getmerge <src> <localdst>             //将源目录中的所有文件排序合并到一个文件中
+
+-copyToLocal [-ignoreCrc] <src> <localdst>  //复制到本地
+
+-cat <src>   //在终端显示文件内容
+
+-text <src>  //在终端显示文件内容
+
+-moveToLocal <src> <localdst>
+
+-mkdir <path>   //创建文件夹
+
+-touchz <path>  //创建一个空文件
+
+
+
+## 常用HDFS 的shell练习
+hadoop fs -ls /  查看HDFS根目录
+
+hadoop fs -mkdir /test 在根目录创建一个目录test
+
+hadoop fs -mkdir /test1 在根目录创建一个目录test1
+
+echo -e 'hadoop second lesson' >test.txt
+
+hadoop fs -put ./test.txt /test　或 # hadoop fs -copyFromLocal ./test.txt /test
+
+hadoop fs -get /test/test.txt .   或#hadoop fs -getToLocal /test/test.txt .
+
+hadoop fs -cp /test/test.txt /test1
+
+hadoop fs -rm /test1/test.txt
+
+hadoop fs -mv /test/test.txt /test1
+
+hadoop fs -rmr /test1
 
